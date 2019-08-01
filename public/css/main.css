@@ -1,0 +1,163 @@
+html {
+  font-family: 'EB Garamond', serif;
+  letter-spacing: 2px;
+  font-size: 15px; }
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block; }
+
+header {
+  background-image: url(../img/material/eyecatch.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  padding: 66px 143px; }
+  header .pc-menu {
+    width: 20%;
+    float: right; }
+    header .pc-menu ul {
+      margin-bottom: 40px; }
+      header .pc-menu ul li {
+        padding: 20px 0;
+        list-style: none;
+        box-sizing: border-box;
+        border-bottom: 1px solid black; }
+        header .pc-menu ul li:last-child {
+          border-bottom: none; }
+    header .pc-menu .reservation {
+      background-color: #D28A94;
+      position: relative;
+      width: 100%;
+      height: 46px;
+      display: block; }
+      header .pc-menu .reservation .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white; }
+        header .pc-menu .reservation .inner.base {
+          width: 90%;
+          background-color: #D28A94;
+          border: 1px solid white;
+          height: 80%; }
+        header .pc-menu .reservation .inner.short {
+          width: 100%;
+          background-color: #D28A94;
+          height: 60%; }
+        header .pc-menu .reservation .inner.long {
+          width: 85%;
+          height: 100%;
+          background-color: #D28A94; }
+
+main {
+  padding: 66px 143px;
+  padding-top: 100px;
+  position: relative;
+  top: -66px;
+  border-radius: 50% / 4em;
+  z-index: 100;
+  background: white; }
+
+section h2 {
+  font-size: 80px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  text-shadow: -5px -5px 1px rgba(0, 0, 0, 0.16); }
+
+section.concept {
+  position: relative;
+  height: 100vh; }
+  section.concept h2 {
+    position: relative;
+    z-index: 99; }
+  section.concept .content-wrapper {
+    position: absolute;
+    top: 10%;
+    background-image: url(../img/material/wood_r.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.16); }
+  section.concept .content {
+    position: absolute;
+    bottom: 19px;
+    right: 37px;
+    width: 391px; }
+    section.concept .content .desc {
+      border-top: 1px solid;
+      margin-top: 1em;
+      padding-top: 1em; }
+
+section.instagram {
+  padding-bottom: 172px; }
+  section.instagram h2 {
+    float: right; }
+
+.small {
+  font-size: 10px; }
+
+section.access h2 {
+  float: left; }
+section.access .content {
+  display: flex;
+  padding-top: 100px; }
+  section.access .content .map {
+    width: 50%;
+    height: 350px; }
+  section.access .content .desc {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30px;
+    box-sizing: border-box; }
+
+footer {
+  color: white;
+  height: 280px;
+  padding: 66px 143px;
+  background-color: #000;
+  position: relative;
+  top: -50px;
+  margin-bottom: 0px; }
+  footer .left {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; }
+    footer .left .reserve__btn {
+      padding: 1em;
+      border: 1px solid white;
+      box-sizing: border-box;
+      width: 100%;
+      color: white;
+      display: block;
+      text-decoration: none;
+      text-align: center; }
+  footer .right {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; }
+  footer ul {
+    margin-left: auto; }
+    footer ul li {
+      float: left;
+      list-style: none;
+      transform: skew(-15deg);
+      border-right: 1px solid white; }
+      footer ul li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        transform: skew(15deg);
+        margin: 0 .5em; }
+
+/*# sourceMappingURL=main.css.map */
