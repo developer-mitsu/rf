@@ -7,6 +7,14 @@ html {
     font-size: 15px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    &:visited {
+        color: inherit;
+    }
+}
+
 .clearfix:after {
     clear: both;
     content: "";
@@ -124,7 +132,45 @@ section.instagram {
         float: right;
     }
     padding-bottom: 172px;
+    .insta-wrap {
+        width: calc(100% - (105px * 2) - 53px);// 100% - 右のh2分 - 余白
+        padding-top: 40px;// h2一文字分くらい
+        margin-left: 105px;
+        .insta-link {
+            text-align: right;
+            margin-bottom: 1em;
+            &:after {
+                display: inline-block;
+                content: "";
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                width: 2.5em;
+                height: 1em;
+                transform: skew(52deg);
+                margin-right: 10px;// skewしたらはみ出た分
+            }
+        }
+        .insta-list {
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 300px;//適当
+            &__img {
+                width: 19%;
+                height: 45%; // 適当
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
+
+
+
 
 .small {
     font-size: 10px;
