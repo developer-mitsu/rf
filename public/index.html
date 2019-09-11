@@ -7,33 +7,75 @@
     <title>Rouefive</title>
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery.bgswitcher.js"></script>
 </head>
 <body>
-    <header>
-        <div class="pc-menu">
-            <img src="img/logo/logo.png" width="100%">
-            <ul>
-                <li>CONCEPT</li>
-                <li>MENU</li>
-                <li>STAFF</li>
-                <li>LINK</li>
-                <li>RECRUIT</li>
-                <li>INSTAGRAM</li>
-                <li>ACCESS</li>
-            </ul>
-            <small>営業時間：13:00〜22:30(lo22:00)</small>
-            <a class="reservation" href="#">
+    <header class="sub sp">
+        <a href="#">
+            <img src="./img/logo/logo.png" alt="logo">
+        </a>
+        <div class="right">
+            <a class="reservation" href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000325928">
                 <div class="inner base"></div>
                 <div class="inner short"></div>
                 <div class="inner long"></div>
                 <p class="inner">RESERVE</p>
             </a>
+            <button class="menu_btn menu" id='openMenuBtn'>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+    <div id="toggleMenu">
+        <button id="closeMenuBtn">
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#concept">CONCEPT</a></li>
+                <li><a href="./menu">MENU</a></li>
+                <li><a href="./staff">STAFF</a></li>
+                <li><a href="./company/index.html#company">LINK</a></li>
+                <li><a href="./company/index.html#recruit">RECRUIT</a></li>
+                <li><a href="#instagram">INSTAGRAM</a></li>
+                <li><a href="#access">ACCESS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header class="top">
+        
+        <!-- -- -->
+        <div class="menu-wrapper">
+            <div class="pc-menu">
+                <img src="img/logo/logo.png" width="100%">
+                <ul>
+                    <li><a href="#concept">CONCEPT</a></li>
+                    <li><a href="./menu">MENU</a></li>
+                    <li><a href="./staff">STAFF</a></li>
+                    <li><a href="./company/index.html#company">COMPANY</a></li>
+                    <li><a href="./company/index.html#recruit">RECRUIT</a></li>
+                    <li><a href="#instagram">INSTAGRAM</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+                <small>営業時間：13:00〜22:30(lo22:00)</small>
+                <a class="reservation" href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000325928">
+                    <div class="inner base"></div>
+                    <div class="inner short"></div>
+                    <div class="inner long"></div>
+                    <p class="inner">RESERVE</p>
+                </a>
+            </div>
+        </div>
+        
+    </header>
     <main>
-        <section class="concept">
+        <section class="concept" id="concept">
             <h2>CONCEPT</h2>
             <div class="content-wrapper clearfix">
                 <div class="content">
@@ -44,10 +86,20 @@
             </div>
         </section>
         <section class="instagram clearfix">
-            <h2>Instagram</h2>
+            <div class="style-wrapper">
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+                <div class="style-item"></div>
+            </div>
+            <h2 id="instagram">style</h2>
         </section>
         <section class="access clearfix">
-            <h2>ACCESS</h2>
+            <h2 id="access">ACCESS</h2>
             <div class="content">
                 <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12954.833174628651!2d139.711841!3d35.733392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2506bc5b58312675!2sRoue+five!5e0!3m2!1sja!2sjp!4v1564473296597!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <div class="desc">
@@ -72,24 +124,54 @@
         </section>
     </main>
     <footer class="clearfix">
-        <div class="left">            
-            <img src="img/logo/logo_r.png" alt="">
-            <div class="reserve">
-                <p class="small">営業時間：13:00～22:30（lo22:00）</p>
-                <a href="#" class="reserve__btn">RESERVE</a>        
+        <div class="footer-content">
+            <div class="left">            
+                <img src="img/logo/logo_r.png" alt="">
+                <div class="reserve">
+                    <p class="small">営業時間：13:00～22:30（lo22:00）</p>
+                    <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000325928" class="reserve__btn">RESERVE</a>        
+                </div>
             </div>
-        </div>
-        <div class="right">
-            <ul class="clearfix">
-                <li><a href="#">MENU</a></li>
-                <li><a href="#">STAFF</a></li>
-                <li><a href="#">LINK</a></li>
-                <li><a href="#">RECRUIT</a></li>
-            </ul>
-            <div class="clearfix aside">
-                <small>© Roue five. All Rights Reserved.</small>
+            <div class="right">
+                <ul class="clearfix">
+                    <li><a href="menu/">MENU</a></li>
+                    <li><a href="staff/">STAFF</a></li>
+                    <li><a href="company/index.html#company">LINK</a></li>
+                    <li><a href="company/index.html#recruit">RECRUIT</a></li>
+                </ul>
+                <div class="clearfix aside">
+                    <small>© Roue five. All Rights Reserved.</small>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+    <script>
+    // window.onload = function () {
+    // //initialize swiper when document ready
+    //     var mySwiper = new Swiper ('.swiper-container', {
+    //     // Optional parameters
+    //     // direction: 'vertical',
+    //     loop: true,
+    //     speed: 1000,
+    //     autoplay: 3000,
+    //     effect: 'fade'
+    //     })
+    // };
+    $(function() {
+        $('header.top').bgSwitcher({
+            images: [
+                './img/main_slider/top1.jpg',
+                './img/main_slider/top2.jpg',
+                './img/main_slider/top3.jpg',
+            ]
+        })
+        this.$bg.css('background-size', 'cover');
+    })
+    </script>
+
+    <!-- <script src="../dist/bundle.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,105 @@
+.reservation {
+  width: 122px; }
+
+section:not(.sec_eyecatch) {
+  max-width: 1000px;
+  margin: 0 auto; }
+
+main {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px; }
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 66px 15%; } }
+
+section.recruit, section.result, section.company {
+  margin-bottom: 129px;
+  display: flex;
+  width: 100%; }
+  @media screen and (max-width: 600px) {
+    section.recruit, section.result, section.company {
+      display: block; } }
+  section.recruit h3, section.result h3, section.company h3 {
+    font-size: 40px; }
+    @media screen and (max-width: 600px) {
+      section.recruit h3, section.result h3, section.company h3 {
+        font-size: 30px; } }
+    section.recruit h3:after, section.result h3:after, section.company h3:after {
+      content: '';
+      display: block;
+      width: 50%;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      border-bottom: 1px solid #D28A94; }
+      @media screen and (max-width: 600px) {
+        section.recruit h3:after, section.result h3:after, section.company h3:after {
+          margin-top: 0; } }
+  section.recruit .image.sp, section.result .image.sp, section.company .image.sp {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 1em; }
+  section.recruit .desc, section.result .desc, section.company .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    padding-right: 2em; }
+    @media screen and (max-width: 600px) {
+      section.recruit .desc, section.result .desc, section.company .desc {
+        width: auto;
+        padding-right: 0px; } }
+    @media screen and (max-width: 600px) {
+      section.recruit .desc .desc-top, section.result .desc .desc-top, section.company .desc .desc-top {
+        margin-bottom: 1.5em; } }
+  section.recruit div.image, section.result div.image, section.company div.image {
+    width: 70%;
+    background-size: cover;
+    background-image: url(../img/material/recruit.png); }
+
+.reservation.recruit {
+  width: 100%; }
+  @media screen and (max-width: 600px) {
+    .reservation.recruit {
+      width: 200px !important;
+      margin: 0 auto; } }
+
+section.result .desc {
+  padding-right: 0px;
+  margin-left: auto; }
+section.result div.desc-top h3 {
+  text-align: right; }
+  section.result div.desc-top h3:after {
+    margin-left: auto; }
+section.result > img {
+  width: 30%; }
+  @media screen and (max-width: 600px) {
+    section.result > img {
+      display: none; } }
+  section.result > img:first-child {
+    margin-right: 44px; }
+  section.result > img:last-child {
+    margin: 0 30px; }
+section.result .sp-imgs {
+  display: flex;
+  margin-bottom: 1em; }
+  section.result .sp-imgs img {
+    width: 47.5%; }
+    section.result .sp-imgs img:first-child {
+      margin-right: 5%; }
+
+section.company {
+  display: block; }
+  section.company div.company-content {
+    display: flex; }
+    section.company div.company-content iframe {
+      height: auto;
+      width: 70%;
+      margin-right: 2em; }
+      @media screen and (max-width: 600px) {
+        section.company div.company-content iframe {
+          width: 100%; } }
+    @media screen and (max-width: 600px) {
+      section.company div.company-content {
+        flex-direction: column; } }
+
+/*# sourceMappingURL=company.css.map */

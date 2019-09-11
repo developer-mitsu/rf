@@ -1,10 +1,45 @@
-$pp: 66px 143px;
+$pp: 66px 123px;
 
+// 円弧の高さ
+$circle_height: 50px;
+
+@mixin sp {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (max-width: 958px) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media screen and (min-width: 958px) {
+        @content;
+    }
+}
 
 html {
     font-family: 'EB Garamond', serif;
     letter-spacing: 2px;
     font-size: 15px;
+}
+
+.sp {
+    display: none;
+    @include sp {
+        display: block;
+    }
+}
+
+small {
+    white-space: nowrap;
+}
+
+body {
+    overflow: hidden;
 }
 
 .clearfix:after {
@@ -13,79 +48,252 @@ html {
     display: block;
 }
 
-header {
-    background-image: url(../img/material/eyecatch.jpg);
+header.top {
+    small {
+        @include tab {
+            white-space: normal;
+        }
+    }
+    // background-image: url(../img/material/eyecatch.jpg);
     height: 100vh;
     width: 100vw;
     background-size: cover;
     padding: $pp;
+    background-position-x: center;
+    @include tab {
+        background-position-x: -160px;
+        padding: 66px 70px;
+    }
+    @include sp {
+        background-position: left;
+    }
 
     .pc-menu {
-        width: 20%;
+        // width: 20%;
+        width: 244px;
         float: right;
+        flex-direction: column;
+        display: flex;
+        // max-height: calc(80vh);
+        height: 100%;
+
+        @include tab {
+            width: 20%;
+            min-width: 110px;
+        }
+
+        @include sp {
+            display: none;
+        }
+
         ul {
+            height: 80%;
+            display: flex;
+            padding-bottom: 40px;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 2em;
             li {
-                padding: 20px 0;
+                position: relative;
+                a {
+                    text-align: center;
+                    vertical-align: middle;
+                    position: absolute;
+                    left: 0;
+                    display: inline-block;
+                    
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #000;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer!important;
+                }
+                // padding: 20px 0;
                 list-style: none;
                 box-sizing: border-box;
                 border-bottom: 1px solid black;
+                display: flex;
+                align-items: center;
+                height: 100%;
                 &:last-child {
                     border-bottom: none;
                 }
             }
-            margin-bottom: 40px;
-        }
-        .reservation {
-            background-color: #D28A94;
-            position: relative;
-            width: 100%;
-            height: 46px;
-            display: block;
-            .inner {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                color: white;
-                &.base {
-                    width: 90%;
-                    background-color: #D28A94;
-                    border: 1px solid white;
-                    height: 80%;
-                }
-                &.short {
-                    width: 100%;
-                    background-color: #D28A94;
-                    height: 60%;
-                }
-                &.long {
-                    width: 85%;
-                    height: 100%;
-                    background-color: #D28A94;
-                }
-            }
+            // margin-bottom: 40px;
         }
     }
 }
 
+.top {
+    .swiper-container {
+        height: 100% !important;
+    }
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide:nth-of-type(1) {
+        background-image: url('../img/main_slider/top1.jpg');
+    }
+    .swiper-slide:nth-of-type(2) {
+        background-image: url('../img/main_slider/top2.jpg');
+    }
+    .swiper-slide:nth-of-type(3) {
+        background-image: url('../img/main_slider/top3.jpg');
+    }
+}
+
+header.sub {
+    background-image: unset;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    @include sp {
+        padding: 0 5%;
+    }
+    div.right {
+        display: flex;
+        align-items: center;
+    }
+    img {
+        height: 35px;
+    }
+}
+
+header.sub.sp {
+    display: none;
+    @include sp {
+        display: flex; 
+    }
+}
+
+.menu_btn {
+    margin-left: 1em;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    span {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        left:0;
+        position: absolute;
+        &:nth-child(1) {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:nth-child(3) {
+            bottom: 0;
+        }
+    }
+}
+
+img.sp.logo {
+    width: 100px;
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu_btn.top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+}
+
+
+.reservation {
+    background-color: #D28A94;
+    position: relative;
+    width: 100%;
+    height: 46px;
+    display: block;
+    flex-shrink: 0;
+    @include sp {
+        width: 90px!important;
+    }
+    
+    .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        @include sp {
+            font-size: 0.8em;
+        }
+        &.base {
+            width: 90%;
+            background-color: #D28A94;
+            border: 1px solid white;
+            height: 80%;
+        }
+        &.short {
+            width: 100%;
+            background-color: #D28A94;
+            height: 60%;
+        }
+        &.long {
+            width: 85%;
+            height: 100%;
+            background-color: #D28A94;
+        }
+    }
+}
+
+
 main {
     padding: $pp;
+    @include sp {
+        padding: 66px 15%;
+    }
     padding-top: 100px;
     position: relative;
-    top: -66px;
     border-radius: 50% / 4em;
-    z-index: 100;
+    z-index: 1;
+    margin: -$circle_height -10%;
     background: white;
+}
+
+div.container {
+    max-width: 1152px;
+    margin: 0 auto;
 }
 
 section {
     h2 {
         font-size: 80px;
+        @include sp {
+            font-size: 45px;
+        }
         -webkit-writing-mode: vertical-rl;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         text-shadow: -5px -5px 1px rgba(0,0,0,0.16);
+    }
+}
+div.menu-wrapper {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 1152px;
+}
+
+section.concept, section.instagram, section.access {
+    max-width: 1152px;
+    margin: 0 auto;
+    @include pc {
+        width: calc(100vw - 246px);
     }
 }
 
@@ -101,6 +309,7 @@ section.concept {
         top: 10%;
         background-image: url(../img/material/wood_r.jpg);
         background-size: cover;
+        background-position-x: center;
         width: 100%;
         height: 500px;
         box-shadow: 2px 4px 8px rgba(0,0,0,0.16);
@@ -115,6 +324,14 @@ section.concept {
             border-top: 1px solid;
             margin-top: 1em;
             padding-top: 1em;    
+        }
+        @include sp {
+            position: static;
+            bottom: 19px;
+            width: 80%;
+            margin-top: 200px;
+            margin-left: auto;
+            padding: 10px;
         }
     }
 }
@@ -140,6 +357,9 @@ section.access {
         .map {
             width: 50%;
             height: 350px;
+            @include sp {
+                width: 100%;
+            }
         }
         .desc {
             width: 50%;
@@ -148,21 +368,58 @@ section.access {
             justify-content: space-between;
             padding-left: 30px;
             box-sizing: border-box;
+            div {
+                margin: 1em 0;
+            }
+            @include sp {
+                width: 100%;
+                padding-left: 0px;
+            }
+        }
+        @include sp {
+            flex-direction: column;
         }
     }
 }
 
 footer {
+    img {
+        height: 60px;
+        @include sp {
+            margin-bottom: 2em;
+        }
+    }
     color: white;
-    height: 280px;
-    padding: $pp;
+    height: 160px;
+    box-sizing: content-box;
+    padding: 100px 143px 66px;
     background-color: #000;
     position: relative;
-    top: -50px;
+    @include sp {
+        padding: 120px 0 100px;
+        height: auto;
+    }
+    // @include pc {
+        .footer-content {
+            height: 100%;
+            max-width: 1152px;
+            margin: 0 auto;
+            @media screen and (min-width: 600px) and (max-width: 958px) {
+                display: flex;
+                justify-content: center;
+                .left {
+                    margin-right: 100px;
+                }
+            }
+        }
+    // }
     .left {
         float:left;
+        white-space: nowrap;
         .reserve__btn {
-            padding: 1em;
+            // padding: 1em;
+            line-height: 46px;
+            font-size: 15px;
             border: 1px solid white;
             box-sizing: border-box;
             width: 100%;
@@ -170,12 +427,22 @@ footer {
             display: block;
             text-decoration: none;
             text-align: center;
+            @include sp {
+                display: none;
+            }
         }
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+        @include sp {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            float: none;
+            width: 60%;
+        }
     }
     .right {
         float: right;
@@ -183,6 +450,9 @@ footer {
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+        @include sp {
+            display: none;
+        }
     }
     ul {
         margin-left: auto;
@@ -205,4 +475,122 @@ footer {
 
     margin-bottom: 0px;
     
+}
+
+.sec_eyecatch {
+    background-image: url(../img/material/wood2.jpg);
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    .title {
+        position: absolute;
+        top: 136px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        font-weight: bold;
+        &:after {
+            display: block;
+            background-color: #000;
+            content: "";
+            width: 70%;
+            margin: 0 auto;
+            height: 1px;
+        }
+    }
+}
+
+#toggleMenu {
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s linear;
+    padding-top: 70px;
+    &.active {
+        opacity: 1;
+        visibility: unset;
+    }
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    text-align: center;
+    // margin-top: 70px;
+    nav {
+        width: 100%;
+        ul {
+            width: 100%;
+            li {
+                width: 100%;
+                padding: 1em;
+                
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    color: black;
+                    width: auto;
+                    font-size: 1.3em;
+                    &:after {
+                        display: block;
+                        margin: 0 auto;
+                        content: '';
+                        width: 0px;
+                        height: 3px;
+                        background-color: #D28A94;
+                        transition: .2s linear;
+                    }
+                    &:hover {
+                        &:after {
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+#closeMenuBtn {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 40px;
+    @include sp {
+        right: 5%;
+    }
+    top: 20px;
+    transform: rotate(45deg);
+    span {
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+        &:first-child {
+            transform: rotate(90deg);
+        }
+    }
+
+}
+
+header.top {
+    transition: background-image 3000ms linear;
+    background-size: cover;
+}
+
+.style-wrapper {
+    .style-item {
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+    }
+    .style-item:nth-child(1) {
+        background-image: url('../img/style/hair1.jpg');
+    }
 }

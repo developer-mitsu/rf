@@ -1,0 +1,85 @@
+$staff_item_interval: 5%;
+$staff_item_interval_sp: 2%;
+
+@mixin sp {
+    @media screen and (max-width: 600px) {
+        @content
+    }
+}
+
+.reservation {
+    width: 122px;
+}
+
+main {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    @include sp {
+        padding: 0px 5% 66px;
+    }
+}
+
+section.staff {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+
+    width: 80%;
+    margin: 0 auto;
+
+    .staff_item {
+        padding: 50px;
+        width: (100% - ($staff_item_interval*4))/3;
+        @include sp {
+            width: (100% - ($staff_item_interval_sp*4))/3;
+        }
+        box-sizing: content-box;
+        .staff_item_desc {
+            text-align: center;
+            h3 {
+                white-space: nowrap;
+                font-weight: bold;
+                font-size: 15px;
+                padding: 0.8em 0;
+                margin: 0 auto ;
+                display: inline-block;
+            }
+            h3:after {
+                display: block;
+                border-bottom: 2px dotted;
+                width: 100%;
+                margin: 1em auto;
+                content: '';
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        &:nth-child(3n-2) {
+            padding: 50px $staff_item_interval 50px 0px;
+            @include sp {
+                padding: 50px $staff_item_interval_sp 50px 0px;
+            }
+        }
+        &:nth-child(3n-1) {
+            padding: 50px $staff_item_interval;
+            @include sp {
+                padding: 50px $staff_item_interval_sp;
+            }
+        }
+        &:nth-child(3n) {
+            padding: 50px 0px 50px $staff_item_interval;
+            @include sp {
+                padding: 50px 0px 50px $staff_item_interval_sp;
+            }
+        }
+    }
+    
+}
