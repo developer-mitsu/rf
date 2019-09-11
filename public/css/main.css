@@ -573,13 +573,51 @@ header.top {
   background-size: cover;
 }
 
+.style-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 2em;
+}
 .style-wrapper .style-item {
   width: 200px;
   height: 200px;
   background-size: cover;
+  background-color: gray;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 600px) {
+  .style-wrapper .style-item {
+    width: 48%;
+  }
 }
 .style-wrapper .style-item:nth-child(1) {
   background-image: url("../img/style/hair1.jpg");
+}
+.style-wrapper .style-item:nth-child(2) {
+  background-image: url("../img/style/hair2.jpg");
+}
+.style-wrapper .style-item:nth-child(3) {
+  background-image: url("../img/style/hair3.jpg");
+}
+.style-wrapper .style-item:nth-child(4) {
+  background-image: url("../img/style/hair4.jpg");
+}
+.style-wrapper .style-item:nth-child(5) {
+  background-image: url("../img/style/hair5.jpg");
+}
+.style-wrapper .style-item:nth-child(6) {
+  background-image: url("../img/style/hair6.jpg");
+}
+.style-wrapper .style-item:nth-child(7) {
+  background-image: url("../img/style/hair7.jpg");
+}
+.style-wrapper .style-item:nth-child(8) {
+  background-image: url("../img/style/hair8.jpg");
+}
+
+.recruit .tel {
+  margin: 1em 0;
 }
 
 /*# sourceMappingURL=main.css.map */
