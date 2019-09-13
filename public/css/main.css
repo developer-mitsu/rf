@@ -403,6 +403,9 @@ footer {
   #toggleMenu.active {
     opacity: 1;
     visibility: unset; }
+  @media screen and (max-width: 600px) {
+    #toggleMenu + *, #toggleMenu + * > * {
+      background-position: center !important; } }
   #toggleMenu nav {
     width: 100%; }
     #toggleMenu nav ul {
