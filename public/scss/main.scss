@@ -520,6 +520,12 @@ footer {
     left: 0;
     text-align: center;
     // margin-top: 70px;
+    & + *, & + * > * {
+        // 反bgswtcher勢力
+        @include sp {
+            background-position: center!important;
+        }
+    }
     nav {
         width: 100%;
         ul {
@@ -588,7 +594,7 @@ header.top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 2em;
+    padding-top: 100px;
     
     .style-item {
         width: 200px;

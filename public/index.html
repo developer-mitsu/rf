@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="jquery.bgswitcher.js"></script>
 </head>
+
 <body>
     <header class="sub sp">
         <a href="#">
@@ -24,7 +26,7 @@
                 <div class="inner long"></div>
                 <p class="inner">RESERVE</p>
             </a>
-            <button class="menu_btn menu" id='openMenuBtn'>
+            <button class="menu_btn menu" id="openMenuBtn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -49,7 +51,7 @@
         </nav>
     </div>
     <header class="top">
-        
+
         <!-- -- -->
         <div class="menu-wrapper">
             <div class="pc-menu">
@@ -72,7 +74,7 @@
                 </a>
             </div>
         </div>
-        
+
     </header>
     <main>
         <section class="concept" id="concept">
@@ -80,7 +82,9 @@
             <div class="content-wrapper clearfix">
                 <div class="content">
                     <h3>Concept</h3>
-                    <p class="desc">Rouefiveは、ヘアセット・メイク専門のサロンです。結婚式のお呼ばれヘアセットやコンサート、イベントの際のヘアセットなど幅広いスタイルに対応しております。細かいカウンセリングでお客様一人一人のご要望にお応えします。</p>
+                    <p class="desc">
+                        Rouefiveは、ヘアセット・メイク専門のサロンです。結婚式のお呼ばれヘアセットやコンサート、イベントの際のヘアセットなど幅広いスタイルに対応しております。細かいカウンセリングでお客様一人一人のご要望にお応えします。
+                    </p>
                 </div>
             </div>
         </section>
@@ -100,7 +104,9 @@
         <section class="access clearfix">
             <h2 id="access">ACCESS</h2>
             <div class="content">
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12954.833174628651!2d139.711841!3d35.733392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2506bc5b58312675!2sRoue+five!5e0!3m2!1sja!2sjp!4v1564473296597!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12954.833174628651!2d139.711841!3d35.733392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2506bc5b58312675!2sRoue+five!5e0!3m2!1sja!2sjp!4v1564473296597!5m2!1sja!2sjp"
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <div class="desc">
                     <div>
                         <h3>Opening hours</h3>
@@ -124,11 +130,12 @@
     </main>
     <footer class="clearfix">
         <div class="footer-content">
-            <div class="left">            
+            <div class="left">
                 <img src="img/logo/logo_r.png" alt="">
                 <div class="reserve">
                     <p class="small">営業時間：13:00～22:30（lo22:00）</p>
-                    <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000325928" class="reserve__btn">RESERVE</a>        
+                    <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000325928"
+                        class="reserve__btn">RESERVE</a>
                 </div>
             </div>
             <div class="right">
@@ -148,30 +155,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
     <script>
-    // window.onload = function () {
-    // //initialize swiper when document ready
-    //     var mySwiper = new Swiper ('.swiper-container', {
-    //     // Optional parameters
-    //     // direction: 'vertical',
-    //     loop: true,
-    //     speed: 1000,
-    //     autoplay: 3000,
-    //     effect: 'fade'
-    //     })
-    // };
-    $(function() {
-        $('header.top').bgSwitcher({
-            images: [
-                './img/main_slider/top4.jpg',
-                './img/main_slider/top3.jpg',
-                // './img/main_slider/top5.jpg',
-                './img/main_slider/top6.jpg',
-            ]
+        // window.onload = function () {
+        // //initialize swiper when document ready
+        //     var mySwiper = new Swiper ('.swiper-container', {
+        //     // Optional parameters
+        //     // direction: 'vertical',
+        //     loop: true,
+        //     speed: 1000,
+        //     autoplay: 3000,
+        //     effect: 'fade'
+        //     })
+        // };
+        $(function () {
+            $('header.top').bgSwitcher({
+                images: [
+                    './img/main_slider/top4.jpg',
+                    './img/main_slider/top3.jpg',
+                    // './img/main_slider/top5.jpg',
+                    './img/main_slider/top6.jpg',
+                ]
+            })
+            this.$bg.css('background-size', 'cover');
         })
-        this.$bg.css('background-size', 'cover');
-    })
     </script>
 
     <script src="bundle.js"></script>
 </body>
+
 </html>
